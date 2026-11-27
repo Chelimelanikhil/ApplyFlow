@@ -1,0 +1,6 @@
+@ApplyFlow.Server_HostAddress = http://localhost:5197
+
+GET {{ApplyFlow.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

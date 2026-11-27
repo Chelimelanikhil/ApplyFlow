@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="applyflow.client/applyflow.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="ApplyFlow.Server/ApplyFlow.Server.csproj" />
+</Solution>
