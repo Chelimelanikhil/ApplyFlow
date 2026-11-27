@@ -8,4 +8,6 @@ public interface IUserRepository
     Task<int> CreateAsync(User user);
 
     Task<User?> GetByEmailAsync(string normalizedEmail);
+
+    Task<User?> GetByIdAsync(int userId);
 }

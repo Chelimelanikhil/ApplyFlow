@@ -101,4 +101,27 @@ public sealed class UserRepository : IUserRepository
         );
     }
 
+    public async Task<User?> GetByIdAsync(int userId)
+    {
+        using var connection = _connectionFactory.CreateConnection();
+
+        const string sql = """
+        SELECT
+            UserId,
+            FullName,
+            Email,
+            NormalizedEmail,
+            PasswordHash,
+            Role,
+            IsEmailVerified,
+            IsActive
+        FROM dbo.Users
+        WHERE UserId = @UserId;
+        """;
+
+        return await connection.QuerySingleOrDefaultAsync<User>(
+            sql,
+            new { UserId = userId });
+    }
+
 }
